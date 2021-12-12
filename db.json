@@ -3,6 +3,9 @@
     "id": "8f101584-1177-48b5-958e-e0e6efc0db01",
     "email": "oryan@gmail.com",
     "password": "$2b$10$IsUXnf6inV/y.LN.2NNhbuXzw89WGTJSj3505OR3IDpZ7nS1u1Iqm",
-    "twoFactorAuth": true
+    "twoFactorAuth": true,
+    "secret": "MXIY3IOQUNUBHDPTQLPMLFGDBIPTYKHZ",
+    "uri": "otpauth://totp/amazing%20app%3A8f101584-1177-48b5-958e-e0e6efc0db01?secret=MXIY3IOQUNUBHDPTQLPMLFGDBIPTYKHZ&issuer=amazing%20app",
+    "qr": "https://chart.googleapis.com/chart?chs=166x166&chld=L|0&cht=qr&chl=otpauth://totp/amazing%20app%3A8f101584-1177-48b5-958e-e0e6efc0db01%3Fsecret=MXIY3IOQUNUBHDPTQLPMLFGDBIPTYKHZ%26issuer=amazing%20app"
   }
 ]

@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import { User } from "./types";
 import bycrypt from "bcrypt";
-import twofactor from "node-2fa";
+const twofactor = require("node-2fa");
 import { v4 as uuidv4 } from "uuid";
 import path from "path";
 import fs from "fs";
@@ -62,13 +62,16 @@ app.post("/login", (_req, res) => {
       .compare(_req.body.password, CurrentUser.password)
       .then((success) => {
         if (CurrentUser.twoFactorAuth === true) {
+          // console.log(CurrentUser);
           const newSecret = twofactor.generateSecret({
             name: "amazing app",
             account: CurrentUser.id,
           });
-          console.log(newSecret);
 
-          addNewUserWithAuth({ ...newSecret, ...CurrentUser });
+          addNewUserWithAuth({
+            ...newSecret,
+            ...CurrentUser,
+          });
           res.status(200).json({
             status: "success",
             qr: newSecret.qr,
