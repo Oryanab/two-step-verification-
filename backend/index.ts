@@ -65,7 +65,7 @@ app.post("/login", (_req, res) => {
           // console.log(CurrentUser);
           const newSecret = twofactor.generateSecret({
             name: "amazing app",
-            account: CurrentUser.id,
+            account: CurrentUser.email,
           });
 
           addNewUserWithAuth({

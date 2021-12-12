@@ -1,8 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+  let navigate = useNavigate();
   return (
-    <div>
+    <div className="center-div">
       <h2>Login:</h2>
       <br />
       <label htmlFor="email">Enter your Email: </label>
@@ -11,7 +13,7 @@ function Login() {
       <label htmlFor="password">Enter your Password:</label>
       <input type="text" name="password" />
       <br />
-      <button>Login Now</button>
+      <button onClick={() => navigate("/2fa")}>Login Now</button>
     </div>
   );
 }
